@@ -1,6 +1,10 @@
 ;;; ob-smiles.el --- Org-mode Babel support for SMILES.
 ;;; -*- coding: utf-8 -*-
 
+;; Keywords: org babel SMILES
+;; Version: 0.0.1
+;; Package-Requires: ((smiles-mode "0.0.1") (org "8"))
+
 ;;; Commentary:
 
 ;;; I copy code from:
