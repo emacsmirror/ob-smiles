@@ -12,7 +12,10 @@
 ;; http://kitchingroup.cheme.cmu.edu/blog/2016/03/26/A-molecule-link-for-org-mode
 
 ;;; Code:
-
+
+(require 'ob)
+(require 'org-element)
+
 ;; Org-mode Babel
 (defun org-babel-execute:smiles (body params)
   "Execute SMILES babel `BODY' with `PARAMS'."
@@ -23,7 +26,7 @@
 (defun molecule-jump (name)
   "Jump to molecule `NAME' definition."
   (org-mark-ring-push)
-  (org-open-link-from-string (format "[[%s]]" path)))
+  (org-link-open-from-string (format "[[%s]]" name)))
 
 (defun molecule-export (path desc backend)
   "Export molecule to HTML format on `PATH' with `DESC' and `BACKEND'."
@@ -34,10 +37,10 @@
      ((eq 'html backend)
       (format "<a href=\"#%s\">%s</a>" name name)))))
 
-(org-add-link-type
+(org-link-set-parameters
  "molecule"
- 'molecule-jump
- 'molecule-export)
+ :follow 'molecule-jump
+ :export 'molecule-export)
 
 ;; org-mode element
 (org-element-map (org-element-parse-buffer)
