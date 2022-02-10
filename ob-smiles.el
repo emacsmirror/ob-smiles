@@ -4,6 +4,7 @@
 ;; Keywords: org babel SMILES
 ;; Version: 0.0.1
 ;; Package-Requires: ((smiles-mode "0.0.1") (org "8"))
+;; Homepage: https://repo.or.cz/ob-smiles.git
 
 ;;; Commentary:
 
