@@ -17,6 +17,7 @@
 ;;; Code:
 
 (require 'ob)
+(require 'ol)
 (require 'org-element)
 
 ;; Org-mode Babel
